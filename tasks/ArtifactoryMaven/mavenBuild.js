@@ -110,10 +110,15 @@ function addToConfig(configInfo, name, snapshotRepo, releaseRepo, serverID) {
 
 function configureServer(artifactory, serverId, cliPath, buildDir) {
     let artifactoryUrl = tl.getEndpointUrl(artifactory);
-    let artifactoryUser = tl.getEndpointAuthorizationParameter(artifactory, "username");
-    let artifactoryPassword = tl.getEndpointAuthorizationParameter(artifactory, "password");
-
-    let cliCommand = utils.cliJoin(cliPath, cliConfigCommand, "--url=" + utils.quote(artifactoryUrl), "--user=" + utils.quote(artifactoryUser), "--password=" + utils.quote(artifactoryPassword), "--interactive=false", utils.quote(serverId));
+    let artifactoryUser = tl.getEndpointAuthorizationParameter(artifactory, "username", true);
+    let artifactoryPassword = tl.getEndpointAuthorizationParameter(artifactory, "password", true);
+    let artifactoryToken = tl.getEndpointAuthorizationParameter(artifactory, "accesstoken",true);
+    let cliCommand;
+    if(artifactoryToken){
+      cliCommand = utils.cliJoin(cliPath, cliConfigCommand, "--url=" + utils.quote(artifactoryUrl), "--access-token=" + utils.quote(artifactoryToken), "--interactive=false", utils.quote(serverId));
+    }else{
+      cliCommand = utils.cliJoin(cliPath, cliConfigCommand, "--url=" + utils.quote(artifactoryUrl), "--user=" + utils.quote(artifactoryUser), "--password=" + utils.quote(artifactoryPassword), "--interactive=false", utils.quote(serverId));
+    }
     let taskRes = utils.executeCliCommand(cliCommand, buildDir);
     if (taskRes) {
         return taskRes;

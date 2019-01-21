@@ -73,7 +73,9 @@ function executeCliCommand(cliCommand, runningDir, stdio) {
         execSync(cliCommand, {cwd: runningDir, stdio: stdio});
     } catch (ex) {
         // Error occurred
-        return ex.toString().replace(/--password=".*"/g, "--password=***");
+        error_string = ex.toString().replace(/--password=".*"/g, "--password=***");
+        error_string = error_string.replace(/----access-token=".*"/g, "----access-token=***");
+        return error_string
     }
 }
 
@@ -95,8 +97,11 @@ function quote(str) {
 function addArtifactoryCredentials(cliCommand, artifactoryService) {
     let artifactoryUser = tl.getEndpointAuthorizationParameter(artifactoryService, "username", true);
     let artifactoryPassword = tl.getEndpointAuthorizationParameter(artifactoryService, "password", true);
+    let artifactoryAccessToken = tl.getEndpointAuthorizationParameter(artifactoryService, "accesstoken", true);
     // Check if should make anonymous access to artifactory
-    if (artifactoryUser === "") {
+    if (artifactoryAccessToken) {
+        cliCommand = cliJoin(cliCommand, "--access-token="+quote(artifactoryAccessToken))
+    } else if (artifactoryUser === "") {
         artifactoryUser = "anonymous";
         cliCommand = cliJoin(cliCommand, "--user=" + quote(artifactoryUser));
     } else {

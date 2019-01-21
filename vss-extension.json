@@ -116,6 +116,22 @@
                                 }
                             }
                         ]
+                    },
+                    {
+                      "type": "ms.vss-endpoint.endpoint-auth-scheme-token",
+                      "inputDescriptors": [
+                        {
+                          "id": "accesstoken",
+                          "name": "AccessToken",
+                          "description": "Time-based access control tokens configured in Artifactory with deploy permissions.",
+                          "inputMode": "passwordbox",
+                          "isConfidential": true,
+                          "validation":{
+                            "isRequired": true,
+                            "dataType": "string"
+                          }
+                        }
+                      ]
                     }
                 ]
             }
