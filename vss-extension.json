@@ -1,11 +1,11 @@
 {
     "manifestversion": 1,
-    "public": true,
-    "id": "jfrog-artifactory-vsts-extension",
+    "public": false,
+    "id": "smgv-artifactory-vsts-extension",
     "version": "1.4.1",
-    "name": "JFrog Artifactory",
+    "name": "SMGV JFrog Artifactory",
     "description": "Integrate your JFrog Artifactory with Visual Studio Team Services.",
-    "publisher": "JFrog",
+    "publisher": "smgv-siberian",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -19,7 +19,7 @@
         "vso.build_execute"
     ],
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "tags": [
         "JFrog",

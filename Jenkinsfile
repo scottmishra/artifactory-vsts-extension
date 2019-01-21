@@ -2,7 +2,7 @@ node {
     cleanWs()
 
     stage ('Clone') {
-        git url: 'https://github.com/jfrog/artifactory-vsts-extension.git'
+        git url: 'https://github.com/scottmishra/artifactory-vsts-extension.git'
     }
 
     stage ('Downloading npm') {

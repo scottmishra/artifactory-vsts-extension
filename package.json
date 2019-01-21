@@ -1,5 +1,5 @@
 {
-    "name": "artifactory-vsts-extension",
+    "name": "smgv-artifactory-vsts-extension",
     "version": "1.0.0",
     "author": "JFrog",
     "private": true,
