@@ -15,7 +15,7 @@ function RunTaskCbk(cliPath) {
     }
 
     // Get input parameters
-    let artifactoryService = tl.getInput("artifactoryService", false);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
     let excludeEnvVars = tl.getInput("excludeEnvVars", false);
 
@@ -33,7 +33,7 @@ function RunTaskCbk(cliPath) {
 }
 
 function attachBuildInfoUrl(buildName, buildNumber, workDir) {
-    let artifactory = tl.getInput("artifactoryService", false);
+    let artifactory = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactory, false);
     let artifactoryUrlFile = path.join(workDir, "artifactoryUrlFile");
     let buildDetails = {

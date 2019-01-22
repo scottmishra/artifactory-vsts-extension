@@ -9,7 +9,7 @@ function RunTaskCbk(cliPath) {
     let buildNumber = tl.getVariable('Build.BuildNumber');
 
     // Get input parameters
-    let artifactoryService = tl.getInput("artifactoryService", false);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
     let targetRepo = tl.getInput("targetRepo", true);
 

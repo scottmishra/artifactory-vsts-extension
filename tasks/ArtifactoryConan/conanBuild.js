@@ -65,7 +65,7 @@ let handleConfigInstallCommand = async(function() {
 */
 let handleAddRemoteCommand = async(function() {
     let remoteName = tl.getInput("remoteName", true);
-    let artifactoryService = tl.getInput("artifactoryService", true);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", true);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
     let artifactoryUser = tl.getEndpointAuthorizationParameter(artifactoryService, "username", true);
     let artifactoryPassword = tl.getEndpointAuthorizationParameter(artifactoryService, "password", true);

@@ -111,7 +111,7 @@ function runNuGet(nugetCommandCli, cliPath, buildDir) {
 
 // Adds the Artifactory information to the command
 function addArtifactoryServer(nugetCommandCli) {
-    let artifactoryService = tl.getInput("artifactoryService", false);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
 
     nugetCommandCli = utils.cliJoin(nugetCommandCli, "--url=" + utils.quote(artifactoryUrl));

@@ -16,7 +16,7 @@ function RunTaskCbk(cliPath) {
     }
 
     // Get input parameters
-    let artifactoryService = tl.getInput("artifactoryService", false);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
     let collectBuildInfo = tl.getBoolInput("collectBuildInfo");
     let npmRepository;

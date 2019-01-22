@@ -15,7 +15,7 @@ let variables = {
 
 let inputs = {
     "remoteName": "artifactory",
-    "artifactoryService": "40567017-861d-4e23-8ebf-c71c33a72224",
+    "cvxArtifactoryService": "40567017-861d-4e23-8ebf-c71c33a72345",
     "conanCommand": "Add Remote",
     "conanRepo": testUtils.repoConan,
     "purgeExistingRemotes": true,

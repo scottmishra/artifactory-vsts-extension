@@ -17,7 +17,7 @@ function RunTaskCbk(cliPath) {
     let specPath = path.join(workDir, "uploadSpec" + Date.now() + ".json");
 
     // Get input parameters
-    let artifactoryService = tl.getInput("artifactoryService", false);
+    let artifactoryService = tl.getInput("cvxArtifactoryService", false);
     let artifactoryUrl = tl.getEndpointUrl(artifactoryService, false);
     let specSource = tl.getInput("specSource", false);
     let collectBuildInfo = tl.getBoolInput("collectBuildInfo");

@@ -57,7 +57,7 @@
     },
     "contributions": [
         {
-            "id": "artifactory-service",
+            "id": "cvxArtifactory-service",
             "description": "Service Endpoint type for Artifactory connections",
             "type": "ms.vss-endpoint.service-endpoint-type",
             "targets": [
@@ -65,7 +65,7 @@
             ],
             "properties": {
                 "name": "artifactoryService",
-                "displayName": "Artifactory",
+                "displayName": "CVX-Artifactory",
                 "url": {
                     "displayName": "Server URL",
                     "helpText": "Specify the root URL of your Artifactory installation. For example, http://repo.jfrog.org/artifactory"
@@ -124,10 +124,10 @@
                           "id": "accesstoken",
                           "name": "AccessToken",
                           "description": "Time-based access control tokens configured in Artifactory with deploy permissions.",
-                          "inputMode": "passwordbox",
+                          "inputMode": "textbox",
                           "isConfidential": true,
                           "validation":{
-                            "isRequired": true,
+                            "isRequired": false,
                             "dataType": "string"
                           }
                         }
